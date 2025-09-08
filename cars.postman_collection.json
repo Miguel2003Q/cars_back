@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "65d80b76-6c0c-4495-a21d-e5232a462e9c",
+		"name": "cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48158554",
+		"_collection_link": "https://miguelmorales-200310-2629171.postman.co/workspace/Miguel-Morales's-Workspace~92007ad4-4597-4aea-8eb9-43a9beafc876/collection/48158554-65d80b76-6c0c-4495-a21d-e5232a462e9c?action=share&source=collection_link&creator=48158554"
+	},
+	"item": [
+		{
+			"name": "registrar usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"CHONTO\",\r\n  \"email\": \"enzo@mail.com\", \r\n  \"password\": \"23456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"CHONTO\",\r\n  \"password\": \"miguelesgay\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NTg5MjIsImV4cCI6MTc1NzA0NTMyMn0.1BDF_T5CxLENcU6yXOavoB26cATtu4AEfEByUmBvmjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"miguelesgay\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creacion cars",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NTkzNDcsImV4cCI6MTc1NzA0NTc0N30.ojX2XNLtTKJbGVhHe-9x3QnXQ8p_RabnpP3-3JnFDI0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"brand\": \"BMW\",\r\n  \"model\": \"M3\",\r\n  \"year\": 2023,\r\n  \"licensePlate\": \"ABC666\",\r\n  \"color\": \"Blanco\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener cars",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NTkzNDcsImV4cCI6MTc1NzA0NTc0N30.ojX2XNLtTKJbGVhHe-9x3QnXQ8p_RabnpP3-3JnFDI0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar cars",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NTkzNDcsImV4cCI6MTc1NzA0NTc0N30.ojX2XNLtTKJbGVhHe-9x3QnXQ8p_RabnpP3-3JnFDI0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"brand\": \"Honda\",\r\n  \"model\": \"Civic\",\r\n  \"year\": 2024,\r\n  \"licensePlate\": \"XYZ789\",\r\n  \"color\": \"Azul\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cars/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cars",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete cars",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NTkzNDcsImV4cCI6MTc1NzA0NTc0N30.ojX2XNLtTKJbGVhHe-9x3QnXQ8p_RabnpP3-3JnFDI0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cars/1 ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cars",
+						"1 "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda por Placa o Modelo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NjEyMjIsImV4cCI6MTc1NzA0NzYyMn0.HEBaoMpZsbvTknwmx7ckqt5PIV4IC877TVp6NmOZkP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cars/search?q=ABC666",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cars",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "ABC666"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrado por año o marca.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDSE9OVE8iLCJpYXQiOjE3NTY5NjI4OTQsImV4cCI6MTc1NzA0OTI5NH0.YUSzBaI9HG7rubtuDWkWcdHmz6PJSHU5-1R5zXh13UA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cars/by-year/2023",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cars",
+						"by-year",
+						"2023"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "foto del auto solo campo simulado",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
